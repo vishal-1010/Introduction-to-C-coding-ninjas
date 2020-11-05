@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+
+void pushZeroesEnd(int *input, int size)
+{
+    //Write your code here
+    int arr[size] = {0};
+	for(int i = 0, j = 0; i < size; i++){
+		if(input[i] > 0){
+            arr[j] = input[i];
+			j++;
+	}
+    }
+	for(int k = 0; k < size; k++){
+		input[k] = arr[k];
+	}
+   
+
+}
+
+int main()
+{
+
+	int t;
+	cin >> t;
+	
+	while (t--)
+	{
+
+		int size;
+
+		cin >> size;
+		int *input = new int[size];
+
+		for (int i = 0; i < size; i++)
+		{
+			cin >> input[i];
+		}
+
+		pushZeroesEnd(input, size);
+
+		for (int i = 0; i < size; i++)
+		{
+			cout << input[i] << " ";
+		}
+
+		cout << endl;
+		delete[] input;
+	}
+
+	return 0;
+} 
